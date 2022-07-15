@@ -3,7 +3,7 @@ import requests
 import arrow
 
 ar = arrow.now().format('DD/MM/YYYY')
-conexao = sqlite3.connect('BancoTriplo.db')
+conexao = sqlite3.connect('DataBase.db')
 cursor = conexao.cursor()
 
 

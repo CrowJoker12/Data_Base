@@ -19,7 +19,6 @@ def validar_cpf(numeros):
                 return False
         return True
 
-
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 class Dados:
     def cadastro_cliente(self):
@@ -38,7 +37,7 @@ class Dados:
             conexao.commit()
             print('\033[35mCliente Cadastrado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def editar_cliente(self):
         cpf = input('Digite o CPF do cliente que deseja alterar: ')
         cursor.execute(f'SELECT * FROM Clientes WHERE CPFCliente ="{cpf}"')
@@ -74,7 +73,7 @@ class Dados:
                 conexao.commit()
                 print('\033[35mCliente Atualizado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def deletar_cliente(self):
         cpf = input('Digite o CPF do cliente que deseja deletar: ')
         cursor.execute(f'SELECT * FROM Clientes WHERE CPFCliente ="{cpf}"')
@@ -88,7 +87,7 @@ class Dados:
             conexao.commit()
             print('\033[35mCliente Deletado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def cadastro_produto(self):
         nome_produto = input('Nome do Produto: ')
         familia_produto = input('Família do Produto: ')
@@ -98,7 +97,7 @@ class Dados:
         conexao.commit()
         print('\033[35mProduto Cadastrado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def editar_produto(self):
         barra = input('Digite o Código de Barras do produto que deseja alterar: ')
         cursor.execute(f'SELECT * FROM Produtos WHERE CódigoBarras="{barra}"')
@@ -117,7 +116,7 @@ class Dados:
             conexao.commit()
             print('\033[35mProduto Atualizado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def deletar_produto(self):
         barra = input('Digite o Código de Barras do produto que deseja deletar: ')
         cursor.execute(f'SELECT * FROM Produtos WHERE CódigoBarras="{barra}"')
@@ -131,7 +130,7 @@ class Dados:
             conexao.commit()
             print('\033[35mProduto Deletado!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def cadastro_venda(self):
         lista = []
         cursor.execute(f'SELECT CódigoBarras FROM Produtos WHERE CódigoBarras="{input("Código do Produto: ")}"')
@@ -155,7 +154,7 @@ class Dados:
                 conexao.commit()
                 print('\033[35mVenda Cadastrada!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def editar_venda(self):
         barra = input('Digite o Código de Barras do produto vendido: ')
         cursor.execute(f'SELECT * FROM Vendas WHERE CódigoBarras="{barra}"')
@@ -185,7 +184,7 @@ class Dados:
                 conexao.commit()
                 print('\033[35mVenda Atualizada!\033[0m')
 
-    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     def deletar_venda(self):
         barra = input('Digite o Código de Barras do produto vendido: ')
         cursor.execute(f'SELECT * FROM Vendas WHERE CódigoBarras="{barra}"')

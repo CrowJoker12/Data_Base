@@ -15,12 +15,18 @@ while True:
 
 
     def op1():
-        dados.cadastro_cliente()
-        print('=-='*10)
+        try:
+            dados.cadastro_cliente()
+        except:
+            print('\033[31mCPF já Cadastrado\033[0m')
+        print('=-=' * 10)
 
 
     def op2():
-        dados.editar_cliente()
+        try:
+            dados.editar_cliente()
+        except:
+            print('\033[31mCPF já Cadastrado\033[0m')
         print('=-=' * 10)
 
 
@@ -30,12 +36,18 @@ while True:
 
 
     def op4():
-        dados.cadastro_produto()
+        try:
+            dados.cadastro_produto()
+        except:
+            print('\033[31mProduto já Cadastrado\033[0m')
         print('=-=' * 10)
 
 
     def op5():
-        dados.editar_produto()
+        try:
+            dados.editar_produto()
+        except:
+            print('\033[31mProduto já Cadastrado\033[0m')
         print('=-=' * 10)
 
 
